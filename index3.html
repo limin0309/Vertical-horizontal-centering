@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直水平居中的几种方式(三)</title>
+    <!--利用flex达到垂直水平居中-->
+    <style>
+        /*上面的两种方法，我们都是基于设置div的top值为50%之后，再进行调整垂偏移量来实现居中的。
+        如果使用CSS3的弹性布局（flex）的话，问题就会变得容易多了。
+        使用CSS3的弹性布局很简单，只要设置父元素（这里是指body）的display的值为flex即可。
+        具体代码如下，对代码不做过多的解释，如果想了解弹性布局的可以看阮一峰老师的博客
+        http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html：
+        */
+
+        html, body {
+            width: 100%;
+            /*先要设置div元素的祖先元素html和body的高度为100%（因为他们默认是为0的）*/
+            height: 100%;
+            margin: 0;
+            /*margin和padding设置为0（如果不清除默认样式的话，浏览器就会出现滚动条)*/
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;  /*定义body的元素垂直居中*/
+            justify-content: center; /*定义body的里的元素水平居中*/
+        }
+
+        .content {
+            width: 300px;
+            height: 300px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+<div class="content"></div>
+</body>
+</html>
